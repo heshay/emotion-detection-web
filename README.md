@@ -51,19 +51,6 @@ The application follows this process:
 **User Text → Flask Backend → Text Preprocessing → TF-IDF → Logistic Regression → Emotion Prediction**
 
 The trained model and TF-IDF vectorizer are loaded by the Flask backend. When the user enters text, the application sends it to the backend, which processes the text and returns the predicted emotion, confidence, and emotion probabilities.
-
-## Project Structure
-
-```text
-emotion-detection-web/
-├── app.py
-├── emotion_detection.py
-├── model/
-│   ├── model.pkl
-│   └── vectorizer.pkl
-├── static/
-│   ├── script.js
-│   └── style.css
 ├── templates/
 │   └── index.html
 ├── README.md
