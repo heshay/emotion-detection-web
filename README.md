@@ -8,7 +8,7 @@ A full-stack emotion detection web application combining machine learning, NLP, 
 
 ![Emotion Quest prediction result](screenshots/emotion-quest-result.png)
 
-This project was developed across my Artificial Intelligence and Web Development coursework. I trained an emotion classification model using NLP techniques for my AI coursework, then built a web interface and Flask backend to turn the model into an interactive web application.
+This project was developed across my Artificial Intelligence and Web Development coursework. I trained an emotion classification model using NLP techniques for my AI coursework, then built a web interface and Flask backend to turn the model into an interactive web application. The project received full marks for both the AI and Web Development coursework.
 
 ## Live Demo
 
