@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emotion Quest</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- =========================
+         RETRO LEVEL DECORATIONS
+         ========================= -->
+
+    <div class="level-decor">
+
+        <!-- Coins -->
+        <div class="coin coin-1">●</div>
+        <div class="coin coin-3">●</div>
+
+        <!-- Question Blocks -->
+        <div class="question-block block-1">?</div>
+        <div class="question-block block-2">?</div>
+        <div class="question-block block-3">?</div>
+
+        <!-- Bricks -->
+        <div class="brick brick-1"></div>
+        <div class="brick brick-2"></div>
+        <div class="brick brick-3"></div>
+
+        <!-- Pixel Hills -->
+        <div class="hill hill-1"></div>
+        <div class="hill hill-2"></div>
+
+        <!-- Green Pipes -->
+        <div class="pipe pipe-1">
+            <div class="pipe-top"></div>
+            <div class="pipe-body"></div>
+        </div>
+
+        <div class="pipe pipe-2">
+            <div class="pipe-top"></div>
+            <div class="pipe-body"></div>
+        </div>
+
+        <!-- Ground -->
+        <div class="ground"></div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN GAME
+         ========================= -->
+
+    <main class="container">
+
+        <!-- =========================
+             HEADER
+             ========================= -->
+
+        <header class="header">
+
+            <div class="logo">
+                ★ EMOTION QUEST
+            </div>
+
+            <h1>
+                Understand the emotion<br>
+                <span>behind your words.</span>
+            </h1>
+
+            <p class="subtitle">
+                Analyze text using a machine-learning NLP model.
+            </p>
+
+        </header>
+
+
+        <!-- =========================
+             INPUT AREA
+             ========================= -->
+
+        <section class="input-card">
+
+            <div class="input-title">
+                ★ ENTER YOUR MESSAGE
+            </div>
+
+            <textarea
+                id="textInput"
+                maxlength="500"
+                placeholder="Type something here..."
+            ></textarea>
+
+            <div class="input-bottom">
+
+                <span class="char-count">
+                    <span id="charCount">0</span> / 500
+                </span>
+
+                <button id="analyzeButton">
+                    ▶ ANALYZE EMOTION
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESULTS
+             ========================= -->
+
+        <section id="result" class="result hidden">
+
+            <!-- =========================
+                 CURRENT MOOD
+                 ========================= -->
+
+            <div class="result-card mood-card">
+
+                <div class="result-label">
+                    ★ CURRENT MOOD
+                </div>
+
+                <div id="emotion" class="emotion-result">
+                    —
+                </div>
+
+                <div class="mood-status">
+                    MODEL DETECTED
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CONFIDENCE
+                 ========================= -->
+
+            <div class="result-card confidence-card">
+
+                <div class="result-label">
+                    ★ CONFIDENCE
+                </div>
+
+                <div id="confidence" class="confidence">
+                    —
+                </div>
+
+                <div class="progress">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar">
+                    </div>
+
+                </div>
+
+                <div class="confidence-text">
+                    Prediction confidence
+                </div>
+
+
+                <!-- =========================
+                     EMOTION PROBABILITIES
+                     ========================= -->
+
+                <div class="probabilities">
+
+                    <!-- SADNESS -->
+
+                    <div class="probability-row">
+
+                        <div class="probability-name">
+                            SADNESS
+                            <span id="sadnessProbability">0%</span>
+                        </div>
+
+                        <div class="probability-bar">
+
+                            <div
+                                id="sadnessBar"
+                                class="probability-fill sadness-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- JOY -->
+
+                    <div class="probability-row">
+
+                        <div class="probability-name">
+                            JOY
+                            <span id="joyProbability">0%</span>
+                        </div>
+
+                        <div class="probability-bar">
+
+                            <div
+                                id="joyBar"
+                                class="probability-fill joy-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ANGER -->
+
+                    <div class="probability-row">
+
+                        <div class="probability-name">
+                            ANGER
+                            <span id="angerProbability">0%</span>
+                        </div>
+
+                        <div class="probability-bar">
+
+                            <div
+                                id="angerBar"
+                                class="probability-fill anger-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MODEL INFORMATION
+             ========================= -->
+
+        <p class="model-info">
+            Powered by TF-IDF + Logistic Regression
+        </p>
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
