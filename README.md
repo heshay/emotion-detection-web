@@ -1,4 +1,4 @@
-# Emotion Quest 🎮
+# Emotion Quest 
 
 A full-stack emotion detection web application combining machine learning, NLP, Flask, and JavaScript.
 
